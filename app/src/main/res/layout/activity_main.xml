@@ -19,10 +19,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- "변수명::메서드명"의 형태를 레퍼런스라고 하며
+         메서드를 넘겨주기 위해 지정하는 방식으로 종종 사용
+         android:onClick="@{viewModel::sayHello}" -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.title}"
+            android:onClick="@{() -> viewModel.sayHello()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

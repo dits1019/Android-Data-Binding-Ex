@@ -5,6 +5,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableField;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.databindingex.databinding.ActivityMainBinding;
 
@@ -32,7 +33,20 @@ public class MainActivity extends AppCompatActivity {
 
     // ObservableField는 값이 바뀌면 연동된 DataBinding에게 정보를 전달하고 이를 이용해 UI를 업데이트할 수 있음
     public static class ViewModel{
+        private int clickCount = 0;
+
         public ObservableField<String> title = new ObservableField<>();
+
+        // 메서드 인자로 꼭 View를 받아야 함(xml에서 클릭 이벤트 처리 시)
+        // 레퍼런스 사용 시
+//        public void sayHello(View v){
+//            clickCount++;
+//            title.set("안녕하세요. " + clickCount + "번째 클릭입니다.");
+//        }
+        public void sayHello(){
+            clickCount++;
+            title.set("안녕하세요. " + clickCount + "번째 클릭입니다.");
+        }
     }
 
 }

@@ -23,16 +23,30 @@
          메서드를 넘겨주기 위해 지정하는 방식으로 종종 사용
          android:onClick="@{viewModel::sayHello}" -->
 
+<!--        <TextView-->
+<!--            android:id="@+id/txt1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@{viewModel.title}"-->
+<!--            android:onClick="@{() -> viewModel.sayHello()}"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!-- 바인딩 어댑터
+        app:reverseText 속성에 뷰 모델의 속성 title을 데이터 바인딩으로 연결-->
+
         <TextView
+            android:id="@+id/txt2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.title}"
-            android:onClick="@{() -> viewModel.sayHello()}"
+            app:reverseText="@{viewModel.title}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </layout>

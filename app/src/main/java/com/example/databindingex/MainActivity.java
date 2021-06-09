@@ -1,11 +1,13 @@
 package com.example.databindingex;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableField;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.databindingex.databinding.ActivityMainBinding;
 
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         binding.setViewModel(viewModel);
 
         // 뷰 모델의 값을 설정
-        viewModel.title.set("Hello World");
+         viewModel.title.set("Hello World");
     }
 
     // ObservableField는 값이 바뀌면 연동된 DataBinding에게 정보를 전달하고 이를 이용해 UI를 업데이트할 수 있음
